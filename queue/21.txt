@@ -1,0 +1,1 @@
+a:5:{s:9:"file_size";i:20702285;s:15:"downloaded_size";i:20702285;s:14:"remaining_size";i:0;s:6:"status";s:9:"Completed";s:8:"progress";s:4:"100%";}

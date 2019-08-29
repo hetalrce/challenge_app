@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Consumer_model_test" file="E:\xampp\htdocs\challenge_app\application\tests\models\consumer_model_test.php" fullPackage="Consumer.model" tests="1" assertions="0" failures="0" errors="1" time="0.054040">
+    <testcase name="test_get_queue_data" class="Consumer_model_test" file="E:\xampp\htdocs\challenge_app\application\tests\models\consumer_model_test.php" line="13" assertions="0" time="0.054040">
+      <error type="LogicException">Consumer_model_test::test_get_queue_data
+LogicException: Status code is not set. You must call $this-&gt;request() first
+
+E:\xampp\htdocs\challenge_app\application\tests\_ci_phpunit_test\CIPHPUnitTestRequest.php:398
+E:\xampp\htdocs\challenge_app\application\tests\_ci_phpunit_test\CIPHPUnitTestCase.php:307
+E:\xampp\htdocs\challenge_app\application\tests\models\consumer_model_test.php:16
+</error>
+    </testcase>
+  </testsuite>
+</testsuites>
