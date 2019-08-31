@@ -8,7 +8,7 @@ class Api_test extends TestCase
 		$output = $this->request('GET', ['Api', 'status_get']);
 
 		$this->assertResponseCode(200);
-		$this->assertContains("[]", $output);
+		$this->assertContains('{"message":"No data found"}', $output);
 	}
 
 	public function test_status()
@@ -20,14 +20,14 @@ class Api_test extends TestCase
 		$this->assertResponseCode(200);
 	}
 
-	public function test_download()
-	{ 
-		$output = $this->request(
-			'POST', 'api/download', ['url' => 'test.png']
-		);
+	// public function test_download()
+	// { 
+	// 	$output = $this->request(
+	// 		'POST', 'api/download', ['url' => 'test.png']
+	// 	);
 
-		 $this->assertResponseCode(200);
-	}
+	// 	 $this->assertResponseCode(200);
+	// }
 
 	public function test_method_404()
 	{

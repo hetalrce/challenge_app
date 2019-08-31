@@ -10,7 +10,6 @@ class Consumer extends CI_Controller {
 	public function __construct() 
 	{
 		parent::__construct();
-		$this->load->model('consumer_model');
 	}
 
 	public function index()
@@ -42,9 +41,6 @@ class Consumer extends CI_Controller {
 
 	private function downloadIt($file_id, $file_url) 
 	{
-		// if (!file_exists($file_url)) {
-		// 	return 200;
-		// }
 		set_time_limit(0);
 		//The path & filename to save to.
 		$save_to = 'download/' . basename ($file_url); 
@@ -73,7 +69,6 @@ class Consumer extends CI_Controller {
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 
 		curl_setopt($ch, CURLOPT_HEADER, 0);
-	//	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_BINARYTRANSFER,1);
 		curl_setopt($ch, CURLOPT_NOPROGRESS, false );
 		curl_setopt($ch, CURLOPT_PROGRESSFUNCTION, function ($resource, $download_size, $downloaded, $upload_size, $uploaded) use ($file_id) {

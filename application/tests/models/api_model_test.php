@@ -19,16 +19,5 @@ Class Api_model_test extends TestCase
 
         $this->assertInternalType("int", $output);
     }
-
-    function test_add_queue() {
-        $file_data = [
-            'url' => 'test.png',
-            'file_id' => 1
-        ];
-        
-        $output = $this->obj->add_queue($file_data);
-
-        $this->assertTrue($output);
-    }
 }
 ?>

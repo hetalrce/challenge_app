@@ -9,13 +9,5 @@ Class Api_model extends CI_Model {
             return false;
         }
     }
-
-    function add_queue($file_data) {
-        if ($this->db->insert('queue', $file_data)) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 }
 ?>

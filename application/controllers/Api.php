@@ -32,20 +32,27 @@ class Api extends REST_Controller {
 		}
 	} 
 	
-	 public function status_get($id = 0)
-	 {
+	public function status_get()
+	{
 		$id = $this->input->get('id');
 		
 		$file = 'queue/' . $id . '.txt';
 		$data = [];
 	    if (!empty($id) && file_exists($file)) { 
 			$data = unserialize(file_get_contents($file));
-		 }
+		}
 
-		 $this->response($data, REST_Controller::HTTP_OK);
-	 }
+		if (empty($data)) {
+			$data['message'] = 'No data found';
+		} 
 
-	private function send($message) 
+		$this->response($data, REST_Controller::HTTP_OK);
+	}
+
+	/**
+	 * @param string $message
+     */
+	private function send(string $message) 
 	{
 		$config = $this->config->item('rabbitmq');
 		$connection = new AMQPStreamConnection($config['host'], $config['port'],$config['user'], $config['pass']);
